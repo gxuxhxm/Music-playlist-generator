@@ -1,0 +1,312 @@
+<!-- HTML document structure -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set and viewport -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOODIFY</title>   <!-- Title of the webpage -->
+  <link rel="web icon" type="png" href="img/coc-icon-45744.png">
+    <!-- Favicon -->
+  <link rel="stylesheet" type="text/css" href="css/style1.css">
+    <!-- External CSS stylesheets -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <!-- External icon libraries -->  
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+   <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <!-- External JavaScript libraries -->
+  <script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="./style1.css">
+  <!-- Prefixfree library for CSS prefixing -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+
+</head>
+
+<body>
+  <header>
+      <!-- Header section -->
+    <a href="#" class="logo">Moodify</a>
+    <ul class="navlist">
+      <li><a href="index1.html">Home</a></li>
+      <li><a href="https://accounts.spotify.com/en/login">Login</a></li>
+      <li><a href="index1.html#footter">Contact</a></li>
+    </ul>
+        <!-- Menu icon for mobile navigation -->
+    <div class="bx bx-menu" id="menu-icon"></div>
+  </header>
+  <!-- Hero section with mood-changing content -->
+  <section class="hero">
+    <div class="hero-text">
+          <!-- Text and information about the mood -->
+      <h5>Find your mood, Find your music.</h5>
+      <h4>Welcome to</h4>
+      <h1>MOODIFY</h1>
+      <p>Click on the emojis to change the moods.<br> Scroll down to find the playlist according to your mood</p>
+      <a href="compare/compare.html">Compare</a>
+      <a href="https://youtu.be/jPDKi-i618U?feature=shared" class="ctaa"  target="_blank"><i class="ri-play-fill" ></i>Watch how music effects mood</a>
+    </div>
+    <div class="hero-img" id="emoji-container">
+      <img src="pngwing.com (4).png" alt="Image 1" class="small-image"> <!-- Replace with your image file path -->
+      <audio id="background-music" loop>
+        <source src="path/to/your/music1.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+      </audio>
+    </div>
+  </section>
+
+  <div class="icons">
+    <a href="https://www.instagram.com" target="_blank"><i class="ri-instagram-line"></i></a>
+    <a href="https://www.twitter.com" target="_blank"><i class="ri-twitter-fill"></i></a>
+    <a href="https://www.youtube.com" target="_blank">
+      <i class="ri-video-fill"></i>
+    </a>
+        
+  </div>
+
+  <div class="scroll-down">
+    <a href="#"><i class="ri-arrow-down-s-fill"></i></a>
+  </div>
+
+  <script src="js/sript.js"></script>
+  <script src="https://unpkg.com/scrollreveal@4.0.7/dist/scrollreveal.min.js"></script>
+  <script>
+    const emojiContainer = document.getElementById('emoji-container');
+    const musicElement = document.getElementById('background-music');
+
+    // Replace this with an array of image paths
+    const imageSources = [
+      'pngwing.com (4).png',
+      'pngwing.com (1).png',
+      'pngwing.com.png',
+      'relaxing-emoji.png',
+      'pngwing.com (2).png',
+      'sad.png',
+    ];
+
+    // Replace this with an array of music paths
+    const musicSources = [
+      'music/kangal-irandal.mp3',
+      'music/sunflower.mp3',
+      'music/laughter.mp3',
+      'music/titanic.mp3',
+      'music/meta.mp3',
+      'music/sad.mp3',
+    ];
+
+    let currentEmojiIndex = 0;
+
+    // Function to change image and music
+    function changeImageAndMusic() {
+      // Change the image
+      emojiContainer.innerHTML = `<img src="${imageSources[currentEmojiIndex]}" alt="Image ${currentEmojiIndex + 1}" class="small-image">`;
+
+      // Change the music source
+      musicElement.src = musicSources[currentEmojiIndex];
+
+      // Check if the audio is paused before changing the source
+      if (!musicElement.paused) {
+        musicElement.pause();
+        musicElement.currentTime = 0; // Reset the playback to the beginning
+      }
+
+      // Increment the index for the next time
+      currentEmojiIndex = (currentEmojiIndex + 1) % imageSources.length;
+
+      // Play the music
+      musicElement.play();
+    }
+
+    // Add click event listener to the image container
+    emojiContainer.addEventListener('click', changeImageAndMusic);
+  </script>
+
+  <!-- head of the first page-->
+  <!-- partial:index.partial.html -->
+<div class="relative py-8 sm:py-8 xl:py-3 min-w-screen min-h-screen flex items-center justify-center text-white">
+	<div class="grid border-x lg:grid-cols-6 sm:grid-cols-3 grid-cols-2 lg:divide-x divide-solid divide-white">
+		<!-- Information for the "Happy" genre -->
+    <article class="group h-full flex flex-col divide-y text-sm text-center divide-gray-400 px-2">
+    <!-- Add content for "Happy" genre -->
+      <div class="sm:pb-8 pb-3 num">1</div>
+			<div class="sm:py-3 py-1.5 uppercase font-light"> Happy</div>
+			<div class="sm:h-28 h-20 flex items-center text-xs">
+				<p class="break-words font-light whitespace-pre-line mx-auto w-28">Elevate your mood with upbeat tunes from genres like pop and dance.</p>
+			</div>            <!-- Information for the "Love" genre -->
+
+			<div class="sm:py-3 py-1.5 uppercase">Serotonin</div>
+			<div class="py-8 text-9xl relative">
+				<q class="text-xs absolute sm:top-28 top-24 left-[8%] max-w-[84%]">
+        Find joy in catchy melodies and uplifting lyrics to create a positive and happy atmosphere.
+				</q>
+				<div class="sm:pt-36 pt-32 sm:pb-0 pb-1 uppercase w-full max-w-full -scale-100 stretch bg-black sm:group-hover:-translate-y-56 group-hover:-translate-y-44 group-hover:transition-transform flex items-center"><a href="genree.html#happy-genre">Happy</a></div>
+			</div>
+		</article>
+		<article class="group border-l lg:border-l-0 h-full flex flex-col divide-y text-sm text-center divide-gray-400 px-2">
+			<div class="sm:pb-8 pb-3 num">2</div>
+			<div class="sm:py-3 py-1.5 uppercase font-light">Love</div>
+			<div class="sm:h-28 h-20 flex items-center text-xs">
+				<!-- Add content for "Love" genre -->
+    <p class="break-words font-light whitespace-pre-line mx-auto w-28">Explore romantic ballads, R&B, and soft rock to express and evoke feelings of love</p>
+			</div>
+			<div class="sm:py-3 py-1.5  uppercase">oxytocin</div>
+			<div class="py-8 text-9xl relative">
+				<q class="text-xs absolute top-28 left-[8%] max-w-[84%]">
+					Let sentimental lyrics and melodic arrangements enhance your romantic moments.
+				</q>
+				<div class="sm:pt-8 pt-4 sm:pb-0 pb-1 uppercase w-full max-w-full -scale-100 stretch bg-black sm:group-hover:-translate-y-56 group-hover:-translate-y-44 group-hover:transition-transform flex items-center"><a href="genree.html#love-genre">love</a></div>
+			</div>
+		</article>
+		<article class="group lg:border-l-0 sm:border-l border-l-0 h-full flex flex-col divide-y text-sm text-center divide-gray-400 px-2">
+			<div class="sm:pb-8 pb-3 num">3</div>
+                  <!-- Information for the "Laughter" genre -->
+			<div class="sm:py-3 py-1.5 uppercase font-light">Laughter</div>
+			<div class="sm:h-28 h-20 flex items-center text-xs">
+                        <!-- Add content for "Laughter" genre -->
+				<p class="break-words font-light whitespace-pre-line mx-auto w-28">Experience lightheartedness and laughter with playful tunes and quirky melodies</p>
+			</div>
+			<div class="sm:py-3 py-1.5 uppercase">humor</div>
+			<div class="py-8 text-9xl relative">
+				<q class="text-xs absolute top-32 left-[8%] max-w-[84%]">
+					Add a touch of humor to your playlist for moments of enjoyment and entertainment
+				</q>
+				<div class="pt-12 sm:pb-0 pb-1 uppercase w-full max-w-full -scale-100 stretch bg-black sm:group-hover:-translate-y-56 group-hover:-translate-y-44 group-hover:transition-transform flex items-center"><a href="genree.html#laughter-genre">Laughter</a></div>
+			</div>
+		</article>
+		<article class="group border-l sm:border-l-0 h-full flex flex-col divide-y text-sm text-center divide-gray-400 px-2">
+			<div class="sm:pb-8 pb-3 num">4</div>
+			<div class="sm:py-3 py-1.5 uppercase font-light">Relaxing</div>
+			<div class="sm:h-28 h-20 flex items-center text-xs">
+				<p class="break-words font-light whitespace-pre-line mx-auto w-28">Unwind and destress with calming genres like ambient and acoustic music</p>
+			</div>
+			<div class="sm:py-3 py-1.5 uppercase">Chill vibes</div>
+			<div class="py-8 text-9xl relative">
+				<q class="text-xs absolute sm:top-36 top-36 left-[8%] max-w-[84%]">
+					Create a tranquil atmosphere that promotes relaxation and a sense of serenity.
+				</q>
+				<div class="pt-8 sm:pb-0 pb-1 uppercase w-full max-w-full -scale-100 stretch bg-black sm:group-hover:-translate-y-56 group-hover:-translate-y-44 group-hover:transition-transform flex items-center">
+					<a href="genree.html#Relaxing-genre">Relaxing</a>
+				</div>
+			
+			</div>
+		</article>
+		<article class="group lg:border-l-0 sm:border-l border-l-0 h-full flex flex-col divide-y text-sm text-center divide-gray-400 px-2">
+			<div class="sm:pb-8 pb-3 num">5</div>
+			<div class="sm:py-3 py-1.5 uppercase font-light">Motivational</div>
+			<div class="sm:h-28 h-20 flex items-center text-xs">
+				<p class="break-words font-light whitespace-pre-line mx-auto w-28">Boost your determination with inspirational music from genres like hip-hop and electronic</p>
+			</div>
+			<div class="sm:py-3 py-1.5 uppercase">Focus</div>
+			<div class="py-8 text-9xl relative">
+				<q class="text-xs absolute sm:top-28 top-16 left-[8%] max-w-[84%]">
+					Find motivation in empowering lyrics and energetic rhythms to fuel your drive
+				</q>
+				<div class="sm:pt-24 pt-8 sm:pb-0 pb-1 uppercase w-full max-w-full -scale-100 stretch bg-black sm:group-hover:-translate-y-56 group-hover:-translate-y-44 group-hover:transition-transform flex items-center"><a href="genree.html#Motivational-genre">Motivational</a></div>
+			</div>
+		</article>
+		<article class="group border-l lg:border-l-0  h-full flex flex-col divide-y text-sm text-center divide-gray-400 px-2">
+			<div class="sm:pb-8 pb-3 num">6</div>
+			<div class="sm:py-3 py-1.5 uppercase font-light">Melancholic</div>
+			<div class="sm:h-28 h-20 flex items-center text-xs">
+				<p class="break-words font-light whitespace-pre-line mx-auto w-28">Explore the emotional depth of sad and poignant tunes</p>
+			</div>
+			<div class="sm:py-3 py-1.5 uppercase">sad vibes</div>
+			<div class="py-8 text-9xl relative">
+				<q class="text-xs absolute sm:top-28 top-16 left-[8%] max-w-[84%]">
+					Delve into genres like blues to connect with the profound offering solace during moments of introspection.
+				</q>
+				<div class="sm:pt-24 pt-8 sm:pb-0 pb-1 uppercase w-full max-w-full -scale-100 stretch bg-black sm:group-hover:-translate-y-56 group-hover:-translate-y-44 group-hover:transition-transform flex items-center"><a href="genree.html#Melancholic-genre">Melancholic</a></div>
+			</div>
+		</article>
+		
+	</div>
+</div>
+    <!-- Include scripts for one click -->
+<script src="js/scripts.js"></script>
+<script src="https://unpkg.com/scrollreveal@4.0.7/dist/scrollreveal.min.js"></script>
+<script>
+ // ScrollReveal initialization
+  const sr = ScrollReveal({
+  distance: '65px',
+  duration: 2600,
+  delay: 450,
+  reset: true
+});
+// Reveal elements on scroll
+sr.reveal('.hero-text', { delay: 100, origin: 'top', distance: '20px' });
+sr.reveal('.hero-img', { delay: 450, origin: 'top', distance: '20px' });
+</script>
+
+<!--subscribe -->
+
+<a href="subscribe/subs.html" class="subscribe-button">Subscribe to our newsletter </a>
+<style>
+  .subscribe-button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      background: linear-gradient(to right, #45cafc, #0052cc); /* Green Gradient */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto; /* Center align the button */
+  }
+
+  .subscribe-button:hover {
+      background: linear-gradient(to right, #0052cc, #45cafc); /* Reverse gradient on hover */
+  }
+</style>
+
+<!--footer-->
+<footer id="footter" style="background-image: linear-gradient( 135deg, #69FF97 10%, #00E4FF 100%); position: relative; color: #fff; padding: 20px; text-align: center; display: flex; align-items: center; justify-content: space-between;">
+
+  <!-- MOODIFY and Copyright (Left Middle) -->
+  <div style="flex: 1; text-align: left;">
+    <h3 style="margin-bottom: 10px;">MOODIFY</h3>
+    <p>&copy; 2023 MOODIFY. All rights reserved.</p>
+  </div>
+
+  <!-- Contact Us (Center Middle) -->
+  <div id="contact" style="margin-top: 20px; flex: 1;">
+    <h6>Contact Us</h6>
+    <p>Email: john.doe@example.com</p>
+    <p>Contact ID: (+1)852-045-5558</p>
+  </div>
+
+  <!-- Social Icons (Right Middle) -->
+  <div style="display: flex; align-items: center; justify-content: flex-end; flex: 1;">
+    <a href="https://www.facebook.com/" style="color: #fff; text-decoration: none; margin-right: 10px;" target="_blank">
+      <i class="ri-facebook-fill"></i>
+    </a>
+    <a href="https://twitter.com/" style="color: #fff; text-decoration: none; margin-right: 10px;" target="_blank">
+      <i class="ri-twitter-fill"></i>
+    </a>
+    <a href="https://www.instagram.com/" style="color: #fff; text-decoration: none; margin-right: 10px;" target="_blank">
+      <i class="ri-instagram-line"></i>
+    </a>
+    <a href="https://www.linkedin.com/" style="color: #fff; text-decoration: none;" target="_blank">
+      <i class="ri-linkedin-fill"></i>
+    </a>
+  </div>
+</footer>
+
+<!-- Remix Icons -->
+<script src="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/dist/remixicon/remixicon.esm.min.js" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
